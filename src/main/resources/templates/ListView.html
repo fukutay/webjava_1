@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>商品一覧画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="shopping.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<form action="/Cart" method="post">
+	<h1>商品一覧</h1>
+    	<table border="1">
+            <thead>
+                <tr>
+                	<th>商品No.</th>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>個数</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+            	<tr th:each="item, itemStat : ${itemList}" >
+            		<td th:text="${itemStat.count}"></td>
+            	    <td th:text="${itemList}"></td>
+            	    <td th:text="${itemList}"></td>
+					<td><select id="num" name="num">
+						<option th:each="num : ${num}" 
+          					th:value="${num}" 
+          					th:text="${num}"></option>
+          					</select>
+					</td>            	    
+            		<td class="button">
+            			<input type="submit" name="addCart" value="カートに追加" >
+            		</td>
+            	</tr>
+            </tbody>
+            </table>
+</form>
+</body>
+</html>

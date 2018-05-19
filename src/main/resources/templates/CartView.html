@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>商品一覧画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="shopping.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h1>カート画面</h1>
+    	    	<tr th:each="item : ${addCart}">
+            		<td th:text="${addCart}"></td>
+            	</tr>
+</body>
+</html>
